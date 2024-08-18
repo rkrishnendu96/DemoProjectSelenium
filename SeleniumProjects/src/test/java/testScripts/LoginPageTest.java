@@ -29,68 +29,7 @@ public class LoginPageTest extends Base {
 		String actualLoginResult = actualLoginResultShow.getText();
 		Assert.assertEquals(actualLoginResult, emailIdExcel, "invalid login");
 	}
-/*
-	@Test
-	public void userLoginWithValidEmailAndInvalidPassword()   {
-		driver.get("https://demowebshop.tricentis.com/login");
-		String emailIdExcel=ExcelUtility.getStringData(1, 0, "LoginPage"); // excel reading
-		String passwordExcel=ExcelUtility.getIntegerData(1, 1, "LoginPage");  // excel reading
-		WebElement email = driver.findElement(By.xpath("//input[@id=\"Email\"]"));
-		email.sendKeys(emailIdExcel);
-		WebElement password = driver.findElement(By.xpath("//input[@id=\"Password\"]"));
-		password.sendKeys(passwordExcel);
-		WebElement login = driver.findElement(By.xpath("//input[@class=\"button-1 login-button\"]"));
-		login.click();
-		///assertion//
-		String expectedLoginResult = "The credentials provided are incorrect";
-		WebElement actualLoginResultShow = driver
-				.findElement(By.xpath("//li[text()=\"The credentials provided are incorrect\"]"));
-		String actualLoginResult = actualLoginResultShow.getText();
-		Assert.assertEquals(actualLoginResult, expectedLoginResult, "Valid login");
 
-	}
-
-	@Test
-	public void userLoginWithInalidEmailAndvalidPassword()   {
-		driver.get("https://demowebshop.tricentis.com/login");
-		String emailIdExcel=ExcelUtility.getStringData(2, 0, "LoginPage"); // excel reading
-		String passwordExcel=ExcelUtility.getIntegerData(2, 1, "LoginPage");  // excel reading
-		WebElement email = driver.findElement(By.xpath("//input[@id=\"Email\"]"));
-		email.sendKeys(emailIdExcel);
-		WebElement password = driver.findElement(By.xpath("//input[@id=\"Password\"]"));
-		password.sendKeys(passwordExcel);
-		WebElement login = driver.findElement(By.xpath("//input[@class=\"button-1 login-button\"]"));
-		login.click();
-		///assertion//
-		String expectedLoginResult = "No customer account found";
-		WebElement actualLoginResultShow = driver.findElement(By.xpath("//li[text()=\"No customer account found\"]"));
-		String actualLoginResult = actualLoginResultShow.getText();
-		Assert.assertEquals(actualLoginResult, expectedLoginResult, "Valid login");
-
-	}
-
-	@Test
-	public void userLoginWithInvalidEmailAndInvalidPassword()   {
-		driver.get("https://demowebshop.tricentis.com/login");
-		String emailIdExcel=ExcelUtility.getStringData(3, 0, "LoginPage"); // excel reading
-		String passwordExcel=ExcelUtility.getIntegerData(3, 1, "LoginPage");  // excel reading
-		WebElement email = driver.findElement(By.xpath("//input[@id=\"Email\"]"));
-		email.sendKeys(emailIdExcel);
-		WebElement password = driver.findElement(By.xpath("//input[@id=\"Password\"]"));
-		password.sendKeys(passwordExcel);
-		WebElement login = driver.findElement(By.xpath("//input[@class=\"button-1 login-button\"]"));
-		login.click();
-		///assertion//
-		String expectedLoginResult = "No customer account found";
-		WebElement actualLoginResultShow = driver.findElement(By.xpath("//li[text()=\"No customer account found\"]"));
-		String actualLoginResult = actualLoginResultShow.getText();
-		Assert.assertEquals(actualLoginResult, expectedLoginResult, "Valid login");
-
-	}
-	
-	*/
-	
-	
 	///// data provider /////
 	@Test (dataProvider="invalidUserCredentials",dataProviderClass=DataProviders.class)
 	public void userLoginWithinvalidCredentials(String username, String userPassword)  {
@@ -107,7 +46,7 @@ public class LoginPageTest extends Base {
 				.findElement(By.xpath("//span[text()=\"Login was unsuccessful. Please correct the errors and try again.\"]"));
 		String actualLoginResult = actualLoginResultShow.getText();
 		Assert.assertEquals(actualLoginResult, expectedLoginResult, "Valid login");
-		driver.close();
+	//	driver.close();
 
 	}
 
