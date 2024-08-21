@@ -41,7 +41,7 @@ public class Base {
 		if(result.getStatus()==ITestResult.FAILURE) {     //if result and failure equal take screenshot
 			takeScreenShot(result);  // method calling
 		}
-		driver.close();
+		driver.quit();
 	}
 	public void takeScreenShot(ITestResult result) throws IOException {
 		TakesScreenshot takesscreenshot=(TakesScreenshot) driver;   //takescreenshot reference created

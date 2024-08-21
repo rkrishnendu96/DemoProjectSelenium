@@ -14,12 +14,13 @@ import utilities.ExcelUtility;
 
 public class HomePageTest extends Base {
 
-	@Test (retryAnalyzer=RetryAnalyzer.class)
+	//@Test (retryAnalyzer=RetryAnalyzer.class)
+	@Test
 	public void verifyHomePageTitle() throws IOException {
 		driver.get("https://demowebshop.tricentis.com/");
 		String actualTitle = driver.getTitle();
 		System.out.println("Title is" + " " + actualTitle);
-		String expectedTitle=ExcelUtility.getStringData(0, 0, "HomePage");  // Excel read
+		String expectedTitle="Demo Web Shop";  
 		Assert.assertEquals(actualTitle, expectedTitle, "Title mismatch");
 	}
 
