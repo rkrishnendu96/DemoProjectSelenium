@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+	<groups>
+		<run>
+			<include name="Sanity"></include>
+			<include name="Smoke"></include>
+		</run>
+	</groups>
 	<listeners>
-		<listener class-name="listeners.AnotationTransformer"></listener>  
+		<listener class-name="listeners.AnotationTransformer"></listener>
 	</listeners>
 	<test thread-count="5" name="Test">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testScripts.HomePageTest">
-				<methods>
-					<include name="verifyHomePageTitle"> </include>
-					<exclude name="verifyCommunityPollSelection"> </exclude>
-				</methods>
-			</class>
-			<!-- <class name="testScripts.LoginPageTest"> -->
-			<!-- 	<class name="testScripts.RegisterPageTest"> -->
+			<class name="testScripts.HomePageTest"></class>
+			<class name="testScripts.LoginPageTest"></class>
 		</classes>
 	</test>
 </suite> <!--

@@ -12,7 +12,7 @@ import dataprovider.DataProviders;
 import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base {
-	@Test
+	@Test(groups={"Smoke","Regression"})
 	public void userLoginWithVAlidCredentials()  {
 		driver.get("https://demowebshop.tricentis.com/login");
 		String emailIdExcel=ExcelUtility.getStringData(0, 0, "LoginPage"); // excel reading
